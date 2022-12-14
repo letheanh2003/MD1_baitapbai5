@@ -22,16 +22,16 @@
 </p>
 <button type="button" onclick="total()">tinh</button>
 <script>
-    function total(){
-        let vatly = + document.getElementById('vatly').value
-        let hoahoc = + document.getElementById('hoahoc').value
-        let sinhhoc = + document.getElementById('sinhhoc').value
+    function total() {
+        let vatly = +document.getElementById('vatly').value
+        let hoahoc = +document.getElementById('hoahoc').value
+        let sinhhoc = +document.getElementById('sinhhoc').value
         let tong = vatly + hoahoc + sinhhoc
-        let diemtrungbinh = tong/3
+        let diemtrungbinh = tong / 3
         document.getElementById('tongdiem').innerHTML = 'tong diem =' + tong
         document.getElementById('diemtrungbinh').innerHTML = 'diem trung binh =' + diemtrungbinh
 
     }
-    </script>
+</script>
 </body>
 </html>

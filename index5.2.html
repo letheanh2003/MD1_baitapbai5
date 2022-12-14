@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    table {
+      collapse: collapse;
+      border: 1px;
+    }
+  </style>
+
+</head>
+<body>
+<table style="text-align: center">
+  <tr>
+    <th>Amount</th>
+    <th>From Currency</th>
+    <th>To Currency</th>
+  </tr>
+  <tr>
+    <td><input id="so" type="text"></td>
+    <td>
+      <select onchange="getFrom(event)">
+        <option id="vietnam" value="VN">vietnam</option>
+        <option id="USA" value="USA">USA</option>
+      </select>
+    </td>
+    <td>
+      <select onchange="getTo(event)">
+        <option id="usd" value="USD">USD</option>
+        <option id="vnd" value="VND">VND</option>
+      </select>
+    </td>
+    <td><button type="button"onclick="total()">doitien</button></td>
+  </tr>
+</table>
+<<P id="ketqua"></P>
+<script>
+  let from = "VN"
+  let to = "USD"
+  function getFrom(event){
+    from = event.target.value
+  }
+  function getTo(event){
+    to = event.target.value
+  }
+  function total() {
+    console.log(from , to)
+    let so = +document.getElementById('so').value
+    if (from == 'VN'&&to == 'USD' ){
+      document.getElementById('ketqua').innerHTML = 'ketqua' +so / 23000
+    }
+    else if (from == 'USA'&&to == 'VND'){
+      document.getElementById('ketqua').innerHTML = 'ketqua' +so * 23000
+    }
+
+  }
+
+</script>
+
+</body>
+</html>

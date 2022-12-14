@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <style>-->
+<!--        #tong-diem {-->
+<!--            color: brown;-->
+<!--        }-->
+<!--        #diem-trung-binh{-->
+<!--            color: chocolate;-->
+<!--        }-->
+<!--    </style>-->
+</head>
+<body>
+<label>
+  Vật lý
+</label>
+<input id="vat-ly" type="text">
+<label>
+ Hóa học
+</label>
+<input id="hoa-hoc" type="text">
+<label>
+Sinh học
+</label>
+<input id="sinh-hoc" type="text">
+<p id="tong-diem">
+    Tổng Điểm:
+</p>
+<p id="diem-trung-binh">
+    Điểm Trung Bình:
+</p>
+<button type="button" onclick="tinhDiem()">Tính</button>
+<script>
+    function tinhDiem(){
+        let vatLy = +document.getElementById('vat-ly').value
+        let hoaHoc = +document.getElementById('hoa-hoc').value
+        let sinhHoc=  +document.getElementById('sinh-hoc').value
+        let tongDiem = vatLy + hoaHoc + sinhHoc
+        let diemTrungBinh = tongDiem/3
+        // document.getElementById('tong-diem').innerHTML= '<h1 style="color: brown">'+'Tổng điểm là: '+tongDiem+'</h1>'
+        document.getElementById('tong-diem').innerHTML = `<h1>Tổng điểm là: ${tongDiem}</h1>`
+        document.getElementById('tong-diem').style.color="red"
+        document.getElementById('diem-trung-binh').innerHTML = `<h1>Điểm Trung Bình là: ${diemTrungBinh}</h1>`
+        document.getElementById('diem-trung-binh').style.color="blue"
+    }
+</script>
+</body>
+</html>
